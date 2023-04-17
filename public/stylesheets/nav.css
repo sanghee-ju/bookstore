@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "KyoboHandwriting2021sjy";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  padding-bottom: 5px;
+  border-bottom: 0.5px solid lightgray;
+  line-height: 60px;
+  font-family: "KyoboHandwriting2021", "sanserif";
+  background-color: white;
+  display: flex;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  width: 80px;
+  margin-right: 10px;
+  list-style: none;
+  font-size: 20px;
+  color: var(--maincolor);
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+}

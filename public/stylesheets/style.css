@@ -1,8 +1,39 @@
+:root {
+  --maincolor: slateblue;
+  --subcolor: #ffd34a;
+  --fontcolor: #595959;
+}
+
+@font-face {
+  font-family: "KyoboHandwriting2021sjy";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* padding: 20px; */
+  font: 14px "KyoboHandwriting2021sjy", Helvetica, Arial, sans-serif;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.page_template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  padding-bottom: 20px;
 }

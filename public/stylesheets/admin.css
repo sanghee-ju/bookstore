@@ -1,0 +1,81 @@
+.admin_plate {
+  width: 45%;
+  margin-top: 20px;
+  border-radius: 30px;
+  border-left: 0.5px solid lightgray;
+  border-top: 0.5px solid lightgray;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 20px;
+  color: var(--fontcolor);
+}
+
+.add_books {
+  display: flex;
+  height: 50%;
+}
+
+.img_preview {
+  width: 230px;
+  height: 350px;
+  background-color: gray;
+  margin-right: 10px;
+}
+
+.add_form {
+  display: flex;
+  margin-left: 10px;
+}
+
+.book_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.number {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  height: 30px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#title {
+  margin-top: 5px;
+}
+
+#qty {
+  width: 50px;
+  margin-left: 5px;
+}
+
+#price {
+  width: 80px;
+  margin-left: 5px;
+}
+
+#desc {
+  height: 120px;
+  resize: none;
+  outline: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#submit {
+  font-family: "KyoboHandwriting2021sjy";
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: var(--maincolor);
+}
