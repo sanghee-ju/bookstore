@@ -5,6 +5,6 @@
 // b_desc:책 설명, b_img: 책 썸네일
 module.exports = {
   getBookList: () => {
-    return "SELECT b_id,b_name,b_qty,b_price,b_desc,b_img FROM t_books;";
+    return "SELECT b_id,b_title,b_author,b_qty,b_price,b_desc,b_img FROM t_books;";
   },
 };

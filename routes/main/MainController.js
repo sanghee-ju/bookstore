@@ -8,7 +8,7 @@ router.get("/", async (req, res, next) => {
   // page 전달해서, page 변경시키기(ejs에 include사용하면 변경 가능!)
   // 전달할 data
   const result = await MainService.getBookList();
-  res.render("index", { page: "pages/main", booklist: result });
+  res.render("index", { page: "pages/main", books: result });
 });
 
 module.exports = router;

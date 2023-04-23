@@ -1,6 +1,6 @@
-var { v4 } = require("uuid");
 module.exports = {
-  addBookList: (title, qty, price, desc, img) => {
-    return `insert into t_books value(b_id, b_name,b_qty,b_price,b_desc,b_img) values (${v4()},${title},${qty},${price},${desc},${img});`;
+  addBookList: (title, author, qty, price, desc, img) => {
+    return `insert into t_books(b_title,b_author,b_qty,b_price,b_desc,b_img) values ('${title}','${author}',
+    ${parseInt(qty)},${parseInt(price)},'${desc}','${img}')`;
   },
 };

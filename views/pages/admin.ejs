@@ -11,13 +11,13 @@
     <div class="admin_plate">
       <h1>재고 추가하기</h1>
       <div class="add_books">
-        <div class="img_preview">미리보기</div>
+        <div class="img_preview" id="preview"></div>
         <div class="add_form">
           <form
             class="book_form"
             method="post"
             onsubmit="addBook"
-            action="/addBook"
+            action="/admin/addBook"
           >
             <label for="title">책 제목</label>
             <input
@@ -25,6 +25,13 @@
               name="title"
               placeholder="책 제목을 입력하세요."
               id="title"
+            />
+            <label>저자</label>
+            <input
+              type="text"
+              name="author"
+              id="author"
+              placeholder="저자를 입력하세요"
             />
             <div class="number">
               <span>
@@ -42,18 +49,47 @@
             <!-- <input type="file" name="img" id="img" /> -->
             <div>
               <input type="text" name="img" id="img" />
-              <button>적용하기</button>
+              <button type="button" id="applyBtn" onclick="applyPreview()">
+                이미지 확인
+              </button>
             </div>
             <input type="submit" value="추가하기" id="submit" />
           </form>
         </div>
       </div>
     </div>
+    <div>
+      <table>
+        <tr>
+          <td>id</td>
+          <td>제목</td>
+          <td>작가</td>
+          <td>수량</td>
+          <td>가격</td>
+        </tr>
+        <%books.forEach((book,index)=>{%>
+        <tr>
+          <td><%=book.b_id%></td>
+          <td><%=book.b_title%></td>
+          <td><%=book.b_author%></td>
+          <td><%=book.b_qty%></td>
+          <td><%=book.b_price%></td>
+        </tr>
+        <%})%>
+      </table>
+    </div>
   </body>
   <script>
     const addBook = (e) => {
       e.preventDefault();
       alert("click!");
+    };
+
+    const applyPreview = (e) => {
+      alert("click");
+      const urlInput = document.getElementById("img");
+      const preview = document.getElementById("preview");
+      preview.style.backgroundImage = `url(${urlInput.value})`;
     };
   </script>
 </html>

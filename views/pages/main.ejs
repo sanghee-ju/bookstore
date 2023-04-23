@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
     <title>Document</title>
   </head>
   <body>
@@ -13,5 +14,31 @@
       value="admin"
       onclick="javascript:location.href='/admin'"
     />
+    <div class="container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+      <div class="item">d</div>
+      <div class="item">e</div>
+      <div class="item">f</div>
+    </div>
+    <table style="border: 1px solid black">
+      <tr style="border: 1px solid black">
+        <td style="border: 1px solid black">id</td>
+        <td style="border: 1px solid black">제목</td>
+        <td style="border: 1px solid black">작가</td>
+        <td style="border: 1px solid black">수량</td>
+        <td style="border: 1px solid black">가격</td>
+      </tr>
+      <%books.forEach((book,index)=>{%>
+      <tr>
+        <td style="border: 1px solid black"><%=book.b_id%></td>
+        <td style="border: 1px solid black"><%=book.b_title%></td>
+        <td style="border: 1px solid black"><%=book.b_author%></td>
+        <td style="border: 1px solid black"><%=book.b_qty%></td>
+        <td style="border: 1px solid black"><%=book.b_price%></td>
+      </tr>
+      <%})%>
+    </table>
   </body>
 </html>
