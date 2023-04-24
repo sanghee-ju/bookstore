@@ -15,30 +15,19 @@
       onclick="javascript:location.href='/admin'"
     />
     <div class="container">
-      <div class="item">a</div>
-      <div class="item">b</div>
-      <div class="item">c</div>
-      <div class="item">d</div>
-      <div class="item">e</div>
-      <div class="item">f</div>
-    </div>
-    <table style="border: 1px solid black">
-      <tr style="border: 1px solid black">
-        <td style="border: 1px solid black">id</td>
-        <td style="border: 1px solid black">제목</td>
-        <td style="border: 1px solid black">작가</td>
-        <td style="border: 1px solid black">수량</td>
-        <td style="border: 1px solid black">가격</td>
-      </tr>
       <%books.forEach((book,index)=>{%>
-      <tr>
-        <td style="border: 1px solid black"><%=book.b_id%></td>
-        <td style="border: 1px solid black"><%=book.b_title%></td>
-        <td style="border: 1px solid black"><%=book.b_author%></td>
-        <td style="border: 1px solid black"><%=book.b_qty%></td>
-        <td style="border: 1px solid black"><%=book.b_price%></td>
-      </tr>
+      <div class="item">
+        <img
+          src="<%=book.book_img%>"
+          alt="book_img"
+          width="120px"
+          height="150px"
+        />
+        <div class="info"><%=book.book_title%></div>
+        <div class="info"><%=book.book_author%></div>
+        <div class="info"><%=book.book_price%>원</div>
+      </div>
       <%})%>
-    </table>
+    </div>
   </body>
 </html>

@@ -30,8 +30,9 @@ ENGINE = InnoDB;
 -- Table `bbooks`.`t_book`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bbooks`.`t_book` (
-  `book_id` INT NOT NULL,
+  `book_id` INT NOT NULL AUTO_INCREMENT,
   `book_title` VARCHAR(255) NULL,
+  `book_author` VARCHAR(45) NULL,
   `book_qty` INT NULL,
   `book_price` INT NULL,
   `book_desc` TEXT NULL,
