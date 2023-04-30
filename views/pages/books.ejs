@@ -4,9 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/book.css" />
     <title>Document</title>
   </head>
   <body>
-    <div>BookStore</div>
+    <div class="container">
+      <%books.forEach((book,index)=>{%>
+      <div
+        class="item"
+        onclick="javascript:location.href='/books/<%=book.book_id%>'"
+      >
+        <div class="book_container">
+          <img
+            src="<%=book.book_img%>"
+            alt="book_img"
+            width="150px"
+            height="180px"
+          />
+        </div>
+        <div class="info_area">
+          <div class="book_info">
+            <div class="info"><%=book.book_title%></div>
+            <div class="info" id="author"><%=book.book_author%></div>
+            <div class="info">
+              <%=book.book_price.toLocaleString('ko-kr')%>원
+            </div>
+          </div>
+          <div class="btn_area">
+            <!-- onclick이 propagation 하지 않도록, stopPropagation 속성 지정필요 -->
+            <button class="btn" id="purchase_btn">바로구매</button>
+            <button class="btn" id="cart_btn">장바구니</button>
+          </div>
+        </div>
+      </div>
+      <%})%>
+    </div>
   </body>
 </html>

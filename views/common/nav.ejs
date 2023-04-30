@@ -10,9 +10,24 @@
   <body>
     <header>
       <ul>
-        <li><img src="/images/logo.png" width="60px" height="60px" /></li>
-        <li onclick="javascript:location.href='/'">Home</li>
-        <li onclick="javascript:location.href='/books'">Books</li>
+        <div class="nav_list">
+          <div class="nav_route">
+            <li>
+              <img
+                src="/images/logo.png"
+                width="60px"
+                height="60px"
+                onclick="javascript:location.href='/'"
+              />
+            </li>
+            <li onclick="javascript:location.href='/'">Home</li>
+            <li onclick="javascript:location.href='/books'">Books</li>
+          </div>
+          <div class="nav_account">
+            <li onclick="javascript:location.href='/login'">로그인</li>
+            <li onclick="javascript:location.href='/register'">회원가입</li>
+          </div>
+        </div>
       </ul>
     </header>
   </body>

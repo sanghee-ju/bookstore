@@ -7,4 +7,7 @@ module.exports = {
   getBookList: () => {
     return "SELECT book_id,book_title,book_author,book_qty,book_price,book_desc,book_img FROM t_book;";
   },
+  findById: (id) => {
+    return `select book_title,book_author,book_qty,book_price,book_desc,book_img from t_book where book_id = ${id}`;
+  },
 };

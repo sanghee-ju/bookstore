@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/bookDetail.css"
+  </head>
+  <body>
+    <div class="book_info">
+      <div class="img_info">
+        <img src="<%=info.book_img%>" width="300px" height="400px" />
+      </div>
+      <div class="text_info">
+        <div>
+          <div class="info" id="title"><%=info.book_title%></div>
+          <div class="info" id="author"><%=info.book_author%></div>
+        </div>
+        <div class="info" id="price">
+          <div><%=info.book_price.toLocaleString('ko-kr')%>원</div>
+          <div id="btns">
+            <button class="btn" id="purch_btn">구매하기</button>
+            <button class="btn" id="cart_btn">장바구니</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desc_area">
+      <div class="desc_label">책 소개</div>
+      <div class="book_desc"><%=info.book_desc%></div>
+    </div>
+  </body>
+</html>

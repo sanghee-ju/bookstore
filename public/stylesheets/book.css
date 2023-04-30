@@ -1,0 +1,79 @@
+.container {
+  width: 90%;
+}
+
+.item {
+  height: 270px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  cursor: pointer;
+  border-bottom: 1.5px solid lightgray;
+}
+
+.item:hover {
+  background-color: aliceblue;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.info:first-child {
+  font-size: 18px;
+}
+
+.info:last-child {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.info_area {
+  width: 300px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+/* .book_info {
+  margin-bottom: 30px;
+} */
+
+.book_container {
+  padding-top: 30px;
+}
+.btn_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  width: 180px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  font-family: NanumSquareNeo-Variable;
+}
+
+#author {
+  color: #a29bfe;
+}
+
+#purchase_btn {
+  background-color: var(--maincolor);
+}
+
+#cart_btn {
+  background-color: var(--subcolor);
+}

@@ -1,0 +1,107 @@
+.book_info {
+  width: 70%;
+  height: 420px;
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img_info {
+  width: 300px;
+  height: 400px;
+  margin-right: 30px;
+}
+
+.text_info {
+  display: flex;
+  flex-direction: column;
+  height: 360px;
+  /* width: 380px; */
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.info {
+  margin-bottom: 20px;
+}
+
+.btn {
+  height: 40px;
+  width: 90px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  font-family: NanumSquareNeo-Variable;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.desc_area {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  border-top: 1.5px solid lightgray;
+  border-bottom: 1.5px solid lightgray;
+  padding: 20px;
+}
+
+.book_desc {
+  width: 70%;
+  padding: 20px;
+  font-size: 20px;
+  white-space: pre-line;
+  overflow: auto;
+  color: var(--fontcolor);
+  font-family: KyoboHandwriting2021sjy;
+}
+
+.book_desc::-webkit-scrollbar {
+  display: none;
+}
+
+.desc_label {
+  width: 75%;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--fontcolor);
+  margin-bottom: 10px;
+}
+
+#title {
+  font-size: 38px;
+  font-weight: bold;
+  color: var(--maincolor);
+}
+
+#author {
+  font-size: 18px;
+  color: gray;
+}
+
+#price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2f3542;
+}
+
+#btns {
+  margin-top: 10px;
+  color: white;
+}
+
+#purch_btn {
+  background-color: var(--maincolor);
+  margin-right: 10px;
+}
+
+#cart_btn {
+  background-color: var(--subcolor);
+}

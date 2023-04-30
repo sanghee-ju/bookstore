@@ -12,9 +12,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   /* padding: 20px; */
-  font: 14px "KyoboHandwriting2021sjy", Helvetica, Arial, sans-serif;
+  font: 14px "NanumSquareNeo-Variable", Helvetica, Arial, sans-serif;
   position: sticky;
   display: flex;
   flex-direction: column;

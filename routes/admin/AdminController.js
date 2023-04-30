@@ -30,7 +30,7 @@ param = {
   //   param.desc,
   //   param.img
   // );
-  AdminService.addBooklist(title, author, qty, price, desc, img);
+  await AdminService.addBooklist(title, author, qty, price, desc, img);
   res.redirect("/");
 });
 
