@@ -1,5 +1,6 @@
 .admin_plate {
   width: 500px;
+  height: 600px;
   margin-top: 20px;
   border-radius: 30px;
   border-left: 0.5px solid lightgray;
@@ -7,11 +8,11 @@
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   padding: 20px;
   color: var(--fontcolor);
+  overflow: scroll;
 }
 
 .add_books {
   display: flex;
-  height: 50%;
 }
 
 .img_preview {
@@ -59,7 +60,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #desc {
-  font-family: "KyoboHandwriting2021sjy";
+  font-family: "NanumSquareNeo-Variable";
 }
 
 #qty {

@@ -6,12 +6,17 @@
   font-style: normal;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 header {
   padding-bottom: 5px;
   border-bottom: 0.5px solid lightgray;
   line-height: 60px;
-  font-family: NanumSquareNeo-Variable, "sanserif";
-  background-color: white;
+  font-family: var(--mainfont);
+  margin-bottom: 10px;
   display: flex;
 }
 
@@ -25,7 +30,7 @@ li {
   width: 80px;
   margin-right: 10px;
   list-style: none;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   cursor: pointer;
   justify-content: center;

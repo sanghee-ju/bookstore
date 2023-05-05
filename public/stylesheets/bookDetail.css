@@ -54,7 +54,6 @@
 }
 
 .book_desc {
-  width: 70%;
   padding: 20px;
   font-size: 20px;
   white-space: pre-line;
@@ -76,7 +75,7 @@
 }
 
 #title {
-  font-size: 38px;
+  font-size: 33px;
   font-weight: bold;
   color: var(--maincolor);
 }

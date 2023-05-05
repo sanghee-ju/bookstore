@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var routes = require("./routes");
 const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 
 var app = express();
 
@@ -22,6 +23,8 @@ app.use(
     secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: true,
+    store: new FileStore(),
+    // 세션을 확인하기 위해 이 폴더에서 생성되도록 해줌.
   })
 );
 

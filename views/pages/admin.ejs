@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="admin_plate">
-      <h1>재고 추가하기</h1>
+      <h2>재고 추가하기</h2>
       <div class="add_books">
         <div class="img_preview" id="preview"></div>
         <div class="add_form">
@@ -25,6 +25,13 @@
               name="title"
               placeholder="책 제목을 입력하세요."
               id="title"
+            />
+            <label for="id">ISBN</label>
+            <input
+              type="text"
+              name="id"
+              id="id"
+              placeholder="ISBN을 입력하세요"
             />
             <label>저자</label>
             <input
@@ -59,6 +66,13 @@
       </div>
     </div>
     <div>
+      <!-- 
+        추가할 내용
+        - 재고 체크 화면
+        - 재고 수정
+        - 재고 삭제
+        - 재고 추가 모달창으로 전환
+       -->
       <table>
         <tr>
           <td>id</td>

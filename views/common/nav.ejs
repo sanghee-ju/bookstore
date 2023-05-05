@@ -24,8 +24,13 @@
             <li onclick="javascript:location.href='/books'">Books</li>
           </div>
           <div class="nav_account">
-            <li onclick="javascript:location.href='/login'">로그인</li>
+            <%if(status === true){%>
+            <li>마이페이지</li>
+            <li onclick="javascript:location.href='/auth/logout'">로그아웃</li>
+            <%}else{%>
+            <li onclick="javascript:location.href='/auth'">로그인</li>
             <li onclick="javascript:location.href='/register'">회원가입</li>
+            <%}%>
           </div>
         </div>
       </ul>

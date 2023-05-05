@@ -3,9 +3,17 @@ const querys = require("./AdminRepository");
 const bookQuerys = require("../books/BooksRepository");
 
 const AdminService = {
-  addBooklist: async (title, author, qty, price, desc, img) => {
+  addBooklist: async (title, id, author, qty, price, desc, img) => {
     try {
-      const query = querys.addBookList(title, author, qty, price, desc, img);
+      const query = querys.addBookList(
+        title,
+        id,
+        author,
+        qty,
+        price,
+        desc,
+        img
+      );
       const conn = await db.getConnection();
       const [result] = await conn.query(query);
       return result;

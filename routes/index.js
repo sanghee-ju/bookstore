@@ -12,7 +12,7 @@ const main = require("./main");
 const books = require("./books");
 const user = require("./user");
 const admin = require("./admin");
-const login = require("./login");
+const auth = require("./login");
 const register = require("./register");
 
-module.exports = [main, books, user, admin, login, register];
+module.exports = [main, books, user, admin, auth, register];
