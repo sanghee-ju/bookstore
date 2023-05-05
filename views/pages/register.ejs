@@ -4,7 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/register.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="register_template">
+      <div class="register_form">
+        <form action="/register" method="post">
+          <label for="email">이메일</label>
+          <!-- selection 추가 버전으로 변경 예정 -->
+          <input type="email" name="email" id="email" placeholder="이메일" />
+
+          <label for="user_id">아이디</label>
+          <input type="text" name="id" id="user_id" placeholder="아이디" />
+
+          <label for="user_name">이름</label>
+          <input type="text" name="name" id="user_name" placeholder="이름" />
+
+          <label for="pw">비밀번호</label>
+          <input
+            type="password"
+            name="password"
+            id="pw"
+            placeholder="비밀번호"
+          />
+
+          <label for="ck_pw">비밀번호 확인</label>
+          <input
+            type="password"
+            name="ck_password"
+            id="ck_pw"
+            placeholder="비밀번호 확인"
+          />
+          <input type="button" id="ck_btn" value="비밀번호 확인" />
+          <input type="button" id="btn_register" value="회원가입" />
+          <input type="submit" id="sbm_register" value="회원가입" />
+        </form>
+      </div>
+      <div class="register_img"></div>
+    </div>
+    <script src="/javascript/register.js"></script>
+  </body>
 </html>

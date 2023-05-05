@@ -1,3 +1,7 @@
+* {
+  font-family: NanumSquareNeo-Variable;
+}
+
 .login_block {
   width: 80%;
   height: 580px;
@@ -41,10 +45,10 @@
 #id_input,
 #pw_input {
   height: 40px;
-  border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 10px;
-  border: 1px solid lightgray;
+  border: none;
+  border-bottom: 1px solid lightgray;
   outline: none;
 }
 
@@ -56,6 +60,6 @@
   cursor: pointer;
   background-color: var(--maincolor);
   color: white;
-  font-family: NanumSquareNeo-Variable;
+
   margin-top: 5px;
 }

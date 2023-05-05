@@ -18,11 +18,12 @@ USE `bbooks` ;
 -- Table `bbooks`.`t_user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bbooks`.`t_user` (
-  `user_id` VARCHAR(45) NOT NULL,
+  `user_em` VARCHAR(45) NOT NULL,
+  `user_id` VARCHAR(45) NULL,
   `user_pw` VARCHAR(45) NULL,
   `user_nm` VARCHAR(45) NULL,
   `user_grade` VARCHAR(45) NULL,
-  PRIMARY KEY (`user_id`))
+  PRIMARY KEY (`user_em`))
 ENGINE = InnoDB;
 
 
@@ -30,14 +31,15 @@ ENGINE = InnoDB;
 -- Table `bbooks`.`t_book`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bbooks`.`t_book` (
-  `book_id` INT NOT NULL AUTO_INCREMENT,
+  `book_id` VARCHAR(100) NOT NULL,
   `book_title` VARCHAR(255) NULL,
   `book_author` VARCHAR(45) NULL,
   `book_qty` INT NULL,
   `book_price` INT NULL,
   `book_desc` TEXT NULL,
   `book_img` VARCHAR(255) NULL,
-  `t_bookcol` VARCHAR(45) NULL,
+  `regi_date` DATE NULL,
+  `sale` INT NULL,
   PRIMARY KEY (`book_id`))
 ENGINE = InnoDB;
 
@@ -46,7 +48,7 @@ ENGINE = InnoDB;
 -- Table `bbooks`.`t_order`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bbooks`.`t_order` (
-  `order_id` INT NOT NULL AUTO_INCREMENT,
+  `order_id` VARCHAR(100) NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
   `order_date` DATETIME NULL,
   `order_total` INT NULL,
@@ -55,8 +57,8 @@ CREATE TABLE IF NOT EXISTS `bbooks`.`t_order` (
   CONSTRAINT `fk_t_order_t_user`
     FOREIGN KEY (`user_id`)
     REFERENCES `bbooks`.`t_user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -73,8 +75,8 @@ CREATE TABLE IF NOT EXISTS `bbooks`.`t_card` (
   CONSTRAINT `fk_t_card_t_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `bbooks`.`t_user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -82,7 +84,7 @@ ENGINE = InnoDB;
 -- Table `bbooks`.`t_order_detail`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bbooks`.`t_order_detail` (
-  `t_book_book_id` INT NOT NULL,
+  `t_book_book_id` VARCHAR(100) NOT NULL,
   `t_order_order_id` INT NOT NULL,
   `order_qty` INT NULL,
   PRIMARY KEY (`t_book_book_id`, `t_order_order_id`),
@@ -91,13 +93,13 @@ CREATE TABLE IF NOT EXISTS `bbooks`.`t_order_detail` (
   CONSTRAINT `fk_t_book_has_t_order_t_book1`
     FOREIGN KEY (`t_book_book_id`)
     REFERENCES `bbooks`.`t_book` (`book_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_t_book_has_t_order_t_order1`
     FOREIGN KEY (`t_order_order_id`)
     REFERENCES `bbooks`.`t_order` (`order_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -114,8 +116,8 @@ CREATE TABLE IF NOT EXISTS `bbooks`.`t_address` (
   CONSTRAINT `fk_t_address_t_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `bbooks`.`t_user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -130,8 +132,8 @@ CREATE TABLE IF NOT EXISTS `bbooks`.`t_cart` (
   CONSTRAINT `fk_t_cart_t_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `bbooks`.`t_user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -148,13 +150,13 @@ CREATE TABLE IF NOT EXISTS `bbooks`.`t_cart_detail` (
   CONSTRAINT `fk_t_cart_has_t_book_t_cart1`
     FOREIGN KEY (`cart_id`)
     REFERENCES `bbooks`.`t_cart` (`cart_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_t_cart_has_t_book_t_book1`
     FOREIGN KEY (`book_id`)
     REFERENCES `bbooks`.`t_book` (`book_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 

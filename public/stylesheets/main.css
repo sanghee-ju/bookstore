@@ -19,3 +19,86 @@
 .info {
   margin-top: 10px;
 }
+
+.exhibit {
+  margin-top: 10px;
+}
+
+.title {
+  width: 90%;
+  display: flex;
+  padding: 10px;
+  font-family: var(--mainfont);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.best_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 90%;
+  height: 280px;
+}
+
+.best_item {
+  border-collapse: collapse;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.ranking {
+  margin-bottom: 5px;
+}
+
+.ranking_box {
+  width: 15%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--mainfont);
+  color: whitesmoke;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ranking_first {
+  background-color: var(--maincolor);
+  height: 30px;
+}
+
+.ranking_rest {
+  background-color: slategrey;
+  height: 25px;
+}
+
+.best_img {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.best_img img {
+  border: 1px solid lightgray;
+  width: 85%;
+  height: 200px;
+}
+
+.best_title {
+  padding-left: 10px;
+  font-family: var(--mainfont);
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.best_author {
+  padding-left: 10px;
+  font-family: var(--mainfont);
+  color: lightslategray;
+  font-size: 14px;
+}

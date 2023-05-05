@@ -1,10 +1,15 @@
 var express = require("express");
 const AdminService = require("./AdminService");
 var router = express.Router();
+const authCheck = require("../login/authCheck");
 
 router.get("/", async (req, res, next) => {
   const booklist = await AdminService.getBookList();
-  res.render("index", { page: "pages/admin", books: booklist });
+  res.render("index", {
+    page: "pages/admin",
+    books: booklist,
+    status: authCheck.isOwner(req, res),
+  });
 });
 
 router.get("/addBook", (req, res) => {
@@ -12,16 +17,7 @@ router.get("/addBook", (req, res) => {
 });
 router.post("/addBook", async (req, res, next) => {
   let param = JSON.parse(JSON.stringify(req.body));
-  /*
-param = {
-  title: 'teste',
-  qty: '121',
-  price: '323',
-  desc: '12dfdf3d',
-  img: 'testteststetset'
-}
-*/
-  let { title, author, qty, price, desc, img } = param;
+  let { title, id, author, qty, price, desc, img } = param;
   // AdminService.addBooklist(
   //   param.title,
   //   param.author,
@@ -30,7 +26,7 @@ param = {
   //   param.desc,
   //   param.img
   // );
-  await AdminService.addBooklist(title, author, qty, price, desc, img);
+  await AdminService.addBooklist(title, id, author, qty, price, desc, img);
   res.redirect("/");
 });
 
