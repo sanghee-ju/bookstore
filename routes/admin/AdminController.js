@@ -27,7 +27,7 @@ router.post("/addBook", async (req, res, next) => {
   //   param.img
   // );
   await AdminService.addBooklist(title, id, author, qty, price, desc, img);
-  res.redirect("/");
+  res.redirect("/admin");
 });
 
 module.exports = router;

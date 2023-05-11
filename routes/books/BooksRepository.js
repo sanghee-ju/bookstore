@@ -11,4 +11,7 @@ module.exports = {
   findById: (id) => {
     return `select book_title,book_author,book_qty,book_price,book_desc,book_img from t_book where book_id = '${id}'`;
   },
+  findReqInfoById: (id) => {
+    return `select book_title,book_author,book_price,book_img from t_book where book_id='${id}';`;
+  },
 };

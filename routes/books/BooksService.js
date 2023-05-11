@@ -22,6 +22,16 @@ const BooksService = {
       throw e;
     }
   },
+  findReqInfoById: async (id) => {
+    try {
+      const query = querys.findReqInfoById(id);
+      const conn = await db.getConnection();
+      const [result] = await conn.query(query);
+      return result;
+    } catch (e) {
+      throw e;
+    }
+  },
 };
 
 module.exports = BooksService;

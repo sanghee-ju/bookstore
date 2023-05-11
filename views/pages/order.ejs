@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/order.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="order_plate">
+      <form action="/order" method="post">
+        <div class="order_info">
+          <div class="info_title">주문정보</div>
+          <div class="info_item" id="purch_info">
+            <div class="purch_item">
+              <div class="book_img">
+                <img
+                  src="/images/thumbnail.png"
+                  width="90px"
+                  height="100px"
+                  alt=""
+                />
+              </div>
+              <div class="book_info">
+                <div class="text_info">
+                  <div id="book_title">책 제목</div>
+                  <div id="book_author">작가</div>
+                </div>
+                <div class="number_info">가격</div>
+              </div>
+              <div class="qty_controller">
+                <input type="button" value="-" /><input
+                  type="number"
+                  name="qty"
+                  value="1"
+                  id="qty"
+                /><input type="button" value="+" />
+              </div>
+            </div>
+            <div class="purch_item">
+              <div class="book_img">
+                <img
+                  src="/images/thumbnail.png"
+                  width="90px"
+                  height="100px"
+                  alt=""
+                />
+              </div>
+              <div class="book_info">
+                <div class="text_info">
+                  <div id="book_title">책 제목</div>
+                  <div id="book_author">작가</div>
+                </div>
+                <div class="number_info">가격</div>
+              </div>
+              <div class="qty_controller">
+                <input type="button" value="-" /><input
+                  type="number"
+                  name="qty"
+                  value="1"
+                  id="qty"
+                /><input type="button" value="+" />
+              </div>
+            </div>
+          </div>
+          <div class="info_title">배송정보</div>
+          <div class="info_item" id="ship_info">
+            <input type="button" id="modi_btn" value="변경하기" />
+            <div id="user_data">
+              <div id="user_info">주상희/010-1234-1234</div>
+              <div class="addr">경상남도 창원시 의창구</div>
+              <div class="addr">103동 1011호</div>
+            </div>
+          </div>
+          <div class="info_title">결제정보</div>
+          <div class="info_item" id="pay_info">
+            <div class="pay_item">
+              <img
+                src="/images/kakaopay.png"
+                alt="카카오페이"
+                height="20px"
+              /><input
+                type="radio"
+                name="payment"
+                value="kakaopay"
+                id="kakaopay"
+              />
+            </div>
+            <div class="pay_item">
+              <span>무통장입금</span>
+              <input type="radio" name="payment" value="bank" id="bank" />
+            </div>
+            <div class="pay_item">
+              <span>카드결제</span>
+              <input type="radio" name="payment" value="card" id="card" />
+            </div>
+          </div>
+        </div>
+        <div class="price_info">
+          <div class="pre_total">
+            <div class="price">상품금액</div>
+            <div class="price">최종금액</div>
+          </div>
+          <div class="total">
+            <hr />
+            <div class="total_price">
+              <div class="price">총 결제금액</div>
+              <input type="submit" value="결제하기" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

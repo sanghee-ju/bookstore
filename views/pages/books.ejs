@@ -32,12 +32,24 @@
           </div>
           <div class="btn_area">
             <!-- onclick이 propagation 하지 않도록, stopPropagation 속성 지정필요 -->
-            <button class="btn" id="purchase_btn">바로구매</button>
+            <button
+              class="btn"
+              id="purchase_btn"
+              onclick="javascript:location.href='/order/<%=book.book_id%>'"
+            >
+              바로구매
+            </button>
             <button class="btn" id="cart_btn">장바구니</button>
           </div>
         </div>
       </div>
       <%})%>
     </div>
+    <script>
+      const puchBtn = document.getElementById("purchase_btn");
+      puchBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    </script>
   </body>
 </html>
