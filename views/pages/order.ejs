@@ -30,12 +30,9 @@
                 <div class="number_info">가격</div>
               </div>
               <div class="qty_controller">
-                <input type="button" value="-" /><input
-                  type="number"
-                  name="qty"
-                  value="1"
-                  id="qty"
-                /><input type="button" value="+" />
+                <input type="button" value="-" class="minusBtn" />
+                <input type="number" name="qty" value="1" class="qtyInput" />
+                <input type="button" value="+" class="plusBtn" />
               </div>
             </div>
             <div class="purch_item">
@@ -55,12 +52,15 @@
                 <div class="number_info">가격</div>
               </div>
               <div class="qty_controller">
-                <input type="button" value="-" /><input
+                <input type="button" value="-" class="minusBtn" />
+                <input
                   type="number"
                   name="qty"
                   value="1"
-                  id="qty"
-                /><input type="button" value="+" />
+                  min="1"
+                  class="qtyInput"
+                />
+                <input type="button" value="+" class="plusBtn" />
               </div>
             </div>
           </div>
@@ -112,5 +112,20 @@
         </div>
       </form>
     </div>
+    <script>
+      const qtyInputs = document.getElementsByClassName("qtyInput");
+      const plusBtn = document.getElementsByClassName("plusBtn");
+      const minusBtn = document.getElementsByClassName("minusBtn");
+
+      for (let i = 0; i < qtyInputs.length; i++) {
+        plusBtn[i].addEventListener("click", () => {
+          qtyInputs[i].value = qtyInputs[i].value * 1 + 1;
+        });
+
+        minusBtn[i].addEventListener("click", () => {
+          qtyInputs[i].value = qtyInputs[i].value * 1 - 1;
+        });
+      }
+    </script>
   </body>
 </html>

@@ -87,7 +87,7 @@
 }
 
 input[type="number"] {
-  width: 30px;
+  width: 20px;
   height: 30px;
   margin-left: 5px;
   margin-right: 5px;
@@ -95,6 +95,12 @@ input[type="number"] {
   outline: none;
   border: 0.3px solid lightslategray;
   font-size: var(--mainfont);
+  text-align: right;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
 .qty_controller input[type="button"] {
