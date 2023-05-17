@@ -1,0 +1,167 @@
+#modal_title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#add_btn {
+  width: 70px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--maincolor);
+  border-radius: 5px;
+  color: white;
+  font-family: var(--mainfont);
+  padding: 5px;
+}
+
+.arr_area {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.arr_item {
+  display: flex;
+  border: 0.7px solid var(--bordercolor);
+  height: 70px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.select_area {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.address {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.user_info {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.basic_addr,
+.spec_addr {
+  font-weight: lighter;
+  color: gray;
+  font-size: 12px;
+}
+
+#input_form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#input_form.show_form {
+  display: flex;
+}
+
+.receiver,
+.userphone {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#username,
+#userphone {
+  height: 30px;
+  border: none;
+  border-bottom: 0.7px solid #d5d5d5;
+  outline: none;
+  width: 240px;
+}
+
+#username:focus,
+#userphone:focus {
+  border-bottom: 0.7px solid var(--maincolor);
+}
+
+input[type="text"]:focus::placeholder,
+input[type="tel"]:focus::placeholder {
+  color: var(--maincolor);
+  font-weight: bold;
+}
+
+.new_address {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+#search_btn {
+  width: 70px;
+  height: 30px;
+  background-color: var(--maincolor);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: var(--mainfont);
+}
+
+.addr_input {
+  display: flex;
+  flex-direction: column;
+}
+
+.temp {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+#addr,
+#addr2 {
+  height: 35px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 0.7px solid #d5d5d5;
+  outline: none;
+}
+
+input[type="submit"] {
+  width: 80px;
+  height: 30px;
+  background-color: var(--maincolor);
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-family: var(--mainfont);
+  cursor: pointer;
+}
+
+#submit_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

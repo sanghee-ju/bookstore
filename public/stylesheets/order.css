@@ -15,12 +15,16 @@
   justify-content: space-between;
 }
 
+input[type="radio"] {
+  accent-color: var(--maincolor);
+}
+
 .order_info {
   width: 670px;
 }
 
 .info_item {
-  border: 0.7px solid lightslategray;
+  border: 0.7px solid var(--bordercolor);
   margin-bottom: 20px;
   border-radius: 5px;
 }
@@ -54,7 +58,6 @@
 
 .purch_item:hover {
   background-color: #d0cff6;
-  transition: background-color 0.5s;
 }
 
 .book_img {
@@ -93,7 +96,7 @@ input[type="number"] {
   margin-right: 5px;
   border-radius: 3px;
   outline: none;
-  border: 0.3px solid lightslategray;
+  border: 0.3px solid var(--bordercolor);
   font-size: var(--mainfont);
   text-align: right;
 }
@@ -126,11 +129,16 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #ship_info {
-  height: 120px;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 
-#modi_btn {
+#ship_info.hidden_mode {
+  height: 400px;
+}
+
+#toggle_btn {
   width: 70px;
   height: 35px;
   border: none;
@@ -151,18 +159,22 @@ input[type="number"]::-webkit-inner-spin-button {
   justify-content: center;
 }
 
+#user_data.hidden_info {
+  display: none;
+}
+
 #user_info {
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 3px;
 }
 
-#book_title {
+.book_title {
   font-weight: bold;
   font-size: 16px;
 }
 
-#book_author {
+.book_author {
   font-weight: lighter;
   font-size: 13px;
   color: lightslategray;
@@ -172,7 +184,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .price_info {
   width: 23%;
   height: 250px;
-  border: 0.7px solid lightslategray;
+  border: 0.7px solid var(--bordercolor);
   outline: none;
   display: flex;
   flex-direction: column;
@@ -184,6 +196,8 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: bold;
   font-size: 15px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .pre_total {
@@ -222,4 +236,155 @@ input[type="submit"] {
   color: white;
   font-family: var(--mainfont);
   cursor: pointer;
+}
+
+/* 모달 */
+#outside {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  border: 1px solid var(--bordercolor);
+  width: 500px;
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.modal button {
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--mainfont);
+}
+
+#close_btn {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.select {
+  text-align: center;
+}
+
+.select button {
+  background-color: var(--maincolor);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: whitesmoke;
+  width: 60px;
+  height: 30px;
+}
+
+/* 주소 입력창 */
+#input_form {
+  margin-top: 10px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#input_form.show_form {
+  display: flex;
+}
+
+.receiver,
+.userphone {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#username,
+#userphone {
+  height: 30px;
+  border: none;
+  border-bottom: 0.7px solid #d5d5d5;
+  outline: none;
+  width: 240px;
+}
+
+#username:focus,
+#userphone:focus {
+  border-bottom: 0.7px solid var(--maincolor);
+}
+
+input[type="text"]:focus::placeholder,
+input[type="tel"]:focus::placeholder {
+  color: var(--maincolor);
+  font-weight: bold;
+}
+
+.new_address {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#search_btn {
+  width: 70px;
+  height: 30px;
+  background-color: var(--maincolor);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: var(--mainfont);
+}
+
+.addr_input {
+  display: flex;
+  flex-direction: column;
+}
+
+.temp {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+#addr,
+#addr2 {
+  height: 35px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 0.7px solid #d5d5d5;
+  outline: none;
+}
+
+#submit_area input[type="button"] {
+  width: 80px;
+  height: 30px;
+  background-color: var(--maincolor);
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-family: var(--mainfont);
+  cursor: pointer;
+}
+
+#submit_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

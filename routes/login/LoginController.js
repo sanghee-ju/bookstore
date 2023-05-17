@@ -17,6 +17,7 @@ router.post("/", async (req, res, next) => {
     const [result] = await LoginService.login(id, password);
     if (result.user_grade === "admin") {
       req.session.is_logined = true;
+      req.session.user_id = "admin";
       req.session.save(() => {
         return res.redirect("/admin");
       });
@@ -26,8 +27,9 @@ router.post("/", async (req, res, next) => {
       return res.write("<script>history.back();</script>");
     }
     req.session.is_logined = true;
+    req.session.user_id = id;
     req.session.save(() => {
-      return res.redirect("/");
+      return res.write("<script>history.back();</script>");
     });
   } else {
     alert("로그인 중 오류가 발생했습니다 :(");

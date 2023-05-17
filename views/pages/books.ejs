@@ -23,7 +23,7 @@
           />
         </div>
         <!-- 음... form으로 바꿔야 하나...!ㅎㅎㅎ -->
-        <!-- 바꿔보자....! -->
+        <!-- 바꿔보자....! 안되넹ㅎ -->
         <div class="info_area">
           <div class="book_info">
             <div class="info"><%=book.book_title%></div>
@@ -34,13 +34,15 @@
           </div>
           <div class="btn_area">
             <!-- onclick이 propagation 하지 않도록, stopPropagation 속성 지정필요 -->
-            <button
-              class="btn"
-              id="purchase_btn"
-              onclick="javascript:location.href='/order/<%=book.book_id%>'"
-            >
-              바로구매
-            </button>
+            <form action="/order" method="post">
+              <input type="hidden" name="book_id" value="<%=book.book_id%>" />
+              <input
+                type="submit"
+                class="btn"
+                id="purchase_btn"
+                value="바로구매"
+              />
+            </form>
             <button class="btn" id="cart_btn">장바구니</button>
           </div>
         </div>

@@ -32,6 +32,16 @@ const BooksService = {
       throw e;
     }
   },
+  updateBookQty: async (id, newQty) => {
+    try {
+      const query = querys.updateBookQty(id, newQty);
+      const conn = await db.getConnection();
+      const [result] = await conn.query(query);
+      return result;
+    } catch (e) {
+      throw e;
+    }
+  },
 };
 
 module.exports = BooksService;

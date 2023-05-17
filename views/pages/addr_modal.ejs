@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/addr_modal.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="modal_title">주소 선택하기</div>
+    <div class="addr_plate">
+      <input type="button" id="add_btn" value="추가하기" />
+      <div class="arr_area">
+        <% if(typeof address_info !== 'undefined'){%> <%
+        address_info.forEach((address,index)=>{ if(index === 0){%>
+        <div class="arr_item">
+          <div class="select_area">
+            <input
+              type="radio"
+              name="addr"
+              checked
+              id="<%=address.address_id%>"
+              value="<%=address.address_id%>"
+            />
+          </div>
+          <label class="address" for="<%=address.address_id%>">
+            <div class="user_info">
+              <%=address.receiver%>/<%=address.phone_number%>
+            </div>
+            <div class="basic_addr"><%=address.adress_base%></div>
+            <div class="spec_addr"><%=address.address_detail%></div>
+          </label>
+        </div>
+        <%}else{%>
+        <div class="arr_item">
+          <div class="select_area">
+            <input
+              type="radio"
+              name="addr"
+              id="<%=address.address_id%>"
+              value="<%=address.address_id%>"
+            />
+          </div>
+          <label class="address" for="<%=address.address_id%>">
+            <div class="user_info">
+              <%=address.receiver%>/<%=address.phone_number%>
+            </div>
+            <div class="basic_addr"><%=address.adress_base%></div>
+            <div class="spec_addr"><%=address.address_detail%></div>
+          </label>
+        </div>
+        <%}%> <%})%><%}%>
+      </div>
+      <div id="input_form">
+        <form action="order/add_address" method="post">
+          <div class="receiver">
+            <label for="username" class="title">수령인</label>
+            <span
+              ><input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="수령인을 입력하세요"
+            /></span>
+          </div>
+          <div class="userphone">
+            <label for="userphone" class="title">전화번호</label>
+            <span
+              ><input
+                type="tel"
+                name="userphone"
+                id="userphone"
+                placeholder="전화번호를 입력하세요"
+            /></span>
+          </div>
+          <div class="new_address">
+            <div class="temp">
+              <span class="title">주소</span>
+              <span
+                ><input
+                  type="button"
+                  value="주소검색"
+                  id="search_btn"
+                  onclick="sample5_execDaumPostcode()"
+              /></span>
+            </div>
+            <div class="add_block">
+              <div class="addr_input">
+                <input type="text" name="addr" id="addr" readonly />
+                <input type="text" name="addr2" id="addr2" />
+              </div>
+            </div>
+
+            <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+            <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=39ece27ba523b42ff0364c8f89fb0e0e&libraries=services"></script>
+            <script>
+              var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+                mapOption = {
+                  center: new daum.maps.LatLng(35.252812, 128.624794), // 지도의 중심좌표
+                  level: 5, // 지도의 확대 레벨
+                };
+
+              //지도를 미리 생성
+              var map = new daum.maps.Map(mapContainer, mapOption);
+              //주소-좌표 변환 객체를 생성
+              var geocoder = new daum.maps.services.Geocoder();
+              //마커를 미리 생성
+              var marker = new daum.maps.Marker({
+                position: new daum.maps.LatLng(35.252812, 128.624794),
+                map: map,
+              });
+
+              function sample5_execDaumPostcode() {
+                new daum.Postcode({
+                  oncomplete: function (data) {
+                    var addr = data.address; // 최종 주소 변수
+
+                    // 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById("addr").value = addr;
+                  },
+                }).open();
+              }
+            </script>
+            <script>
+              const add_btn = document.getElementById("add_btn");
+              const input_form = document.getElementById("input_form");
+              const username = document.getElementById("username");
+              const userphone = document.getElementById("userphone");
+              const addr = document.getElementById("addr");
+              const addr2 = document.getElementById("addr2");
+
+              document.querySelector("body").addEventListener("load", (e) => {
+                username.value = "";
+                userphone.value = "";
+                addr.value = "";
+                addr2.value = "";
+                input_form.style.display = "none";
+              });
+
+              add_btn.addEventListener("click", (e) => {
+                input_form.classList.toggle("show_form");
+              });
+            </script>
+            <div id="submit_area">
+              <input type="submit" value="추가하기" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="select"><button id="select_address">선택하기</button></div>
+    </div>
+    <script>
+      const select_address = document.getElementById("select_address");
+      select_address.addEventListener("click", (e) => {
+        // 부모 요소로 값 전달하기
+        // opener.document.getElementById("addr_base").innerHTML =
+        //   addr.value;
+        const radios = document.querySelectorAll("input[type='radio']");
+        const basic_addr = document.getElementsByClassName("basic_addr");
+
+        // radios.forEach((radio, index) => {
+        //   if (radio.checked) {
+        //   }
+        // });
+      });
+    </script>
+  </body>
+</html>
