@@ -5,7 +5,146 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/cart.css" />
-    <title>Document</title>
+    <title></title>
   </head>
-  <body></body>
+  <body>
+    <div class="cart_template">
+      <h3>장바구니</h3>
+      <div class="all_item">
+        <label class="check_label_all" id="all_check">
+          <input type="checkbox" id="select_all" />
+        </label>
+        <span>전체 선택</span>
+      </div>
+      <form action="" method="get" class="cart_plate">
+        <div class="cart_list">
+          <div class="purch_item">
+            <input type="hidden" name="book_id" value="te" />
+            <div class="checkbox">
+              <label class="check_label">
+                <input
+                  type="checkbox"
+                  class="select_item"
+                  name="book"
+                  value="id"
+                />
+              </label>
+            </div>
+            <div class="book_img">
+              <img
+                src="images/thumbnail.png"
+                width="90px"
+                height="100px"
+                alt="book_cover"
+              />
+            </div>
+            <div class="book_info">
+              <div class="text_info">
+                <div class="book_title">책 제목</div>
+                <div class="book_author">작가</div>
+              </div>
+              <div class="number_info">13050</div>
+            </div>
+            <div class="qty_controller">
+              <input type="button" value="-" class="minusBtn" />
+              <input type="number" name="qty" value="1" class="qtyInput" />
+              <input type="button" value="+" class="plusBtn" />
+            </div>
+          </div>
+          <div class="purch_item">
+            <input type="hidden" name="book_id" value="te" />
+            <div class="checkbox">
+              <label class="check_label">
+                <input
+                  type="checkbox"
+                  class="select_item"
+                  name="book"
+                  value="id2"
+                />
+              </label>
+            </div>
+            <div class="book_img">
+              <img
+                src="images/thumbnail.png"
+                width="90px"
+                height="100px"
+                alt="book_cover"
+              />
+            </div>
+            <div class="book_info">
+              <div class="text_info">
+                <div class="book_title">책 제목2</div>
+                <div class="book_author">작가2</div>
+              </div>
+              <div class="number_info">9000</div>
+            </div>
+            <div class="qty_controller">
+              <input type="button" value="-" class="minusBtn" />
+              <input type="number" name="qty" value="1" class="qtyInput" />
+              <input type="button" value="+" class="plusBtn" />
+            </div>
+          </div>
+        </div>
+        <div class="price_info">
+          <div class="pre_total">
+            <div class="price">상품금액 <span id="cac_price"></span></div>
+            <div class="price">배송비 <span id="ship">3000</span></div>
+          </div>
+
+          <div class="total">
+            <hr />
+            <div class="price">최종금액<span id="total"></span></div>
+            <input type="submit" value="바로구매" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      const qtyInputs = document.getElementsByClassName("qtyInput");
+      const plusBtn = document.getElementsByClassName("plusBtn");
+      const minusBtn = document.getElementsByClassName("minusBtn");
+      const number_info = document.getElementsByClassName("number_info");
+      const check_label = document.getElementsByClassName("check_label");
+      const checkbox = document.getElementsByName("book");
+      const select_all = document.getElementById("select_all");
+      const cac_price = document.getElementById("cac_price");
+      const total = document.getElementById("total");
+      const sb_total = document.getElementById("sb_total");
+      let total_price = 0;
+
+      select_all.addEventListener("change", () => {
+        document.getElementById("all_check").classList.toggle("checked");
+        for (let i = 0; i < checkbox.length; i++) {
+          checkbox[i].checked = select_all.checked;
+          check_label[i].classList.toggle("checked");
+        }
+      });
+
+      for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].addEventListener("change", () => {
+          check_label[i].classList.toggle("checked");
+        });
+      }
+
+      // 개선 필요....!!
+      for (let i = 0; i < qtyInputs.length; i++) {
+        cac_price.innerText =
+          qtyInputs[i].value * parseInt(number_info[i].innerText);
+        total.innerText = parseInt(cac_price.innerText) + 3000;
+        plusBtn[i].addEventListener("click", (e) => {
+          qtyInputs[i].value = parseInt(qtyInputs[i].value) + 1;
+          cac_price.innerText =
+            qtyInputs[i].value * parseInt(number_info[i].innerText);
+          total.innerText = parseInt(cac_price.innerText) + 3000;
+        });
+
+        minusBtn[i].addEventListener("click", (e) => {
+          qtyInputs[i].value = parseInt(qtyInputs[i].value) - 1;
+          cac_price.innerText =
+            qtyInputs[i].value * parseInt(number_info[i].innerText);
+          total.innerText = parseInt(cac_price.innerText) + 3000;
+        });
+      }
+    </script>
+  </body>
 </html>

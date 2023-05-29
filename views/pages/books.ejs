@@ -34,16 +34,25 @@
           </div>
           <div class="btn_area">
             <!-- onclick이 propagation 하지 않도록, stopPropagation 속성 지정필요 -->
-            <form action="/order" method="post">
+            <form>
               <input type="hidden" name="book_id" value="<%=book.book_id%>" />
               <input
                 type="submit"
                 class="btn"
                 id="purchase_btn"
                 value="바로구매"
+                formaction="/order"
+                formmethod="post"
+              />
+              <input
+                type="submit"
+                class="btn"
+                id="cart_btn"
+                formaction="/cart/go_to_cart"
+                formmethod="post"
+                value="장바구니"
               />
             </form>
-            <button class="btn" id="cart_btn">장바구니</button>
           </div>
         </div>
       </div>

@@ -15,5 +15,6 @@ const admin = require("./admin");
 const auth = require("./login");
 const register = require("./register");
 const order = require("./order");
+const cart = require("./cart");
 
-module.exports = [main, books, user, admin, auth, register, order];
+module.exports = [main, books, user, admin, auth, register, order, cart];

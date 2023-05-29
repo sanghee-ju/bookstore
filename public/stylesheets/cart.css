@@ -1,0 +1,207 @@
+.cart_template {
+  width: 90%;
+}
+
+.cart_template h3 {
+  font-size: 22px;
+}
+
+.cart_plate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.all_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.all_item .check_label {
+  margin-right: 10px;
+}
+
+.all_item span {
+  font-weight: lighter;
+}
+
+.cart_list {
+  width: 68%;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.purch_item {
+  display: flex;
+  width: 100%;
+}
+
+.purch_item:hover {
+  background-color: #d0cff6;
+}
+
+/* 체크박스 css */
+
+.checkbox {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox input[type="checkbox"],
+#select_all {
+  display: none;
+}
+
+/* 체크 전의 상태 */
+.check_label,
+.check_label_all {
+  content: "";
+  display: inline-block;
+  border: 0.5px solid var(--maincolor);
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#all_check {
+  margin-right: 10px;
+}
+
+.checked {
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/check.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+/* 체크 후의 상태 */
+
+.book_img {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.text_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.qty_controller {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="number"] {
+  width: 20px;
+  height: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 3px;
+  outline: none;
+  border: 0.3px solid var(--bordercolor);
+  font-size: var(--mainfont);
+  text-align: right;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.qty_controller input[type="button"] {
+  height: 30px;
+  width: 30px;
+  background-color: var(--maincolor);
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.number_info {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--mainfont);
+}
+
+.book_title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.book_author {
+  font-weight: lighter;
+  font-size: 13px;
+  color: lightslategray;
+}
+
+.price_info {
+  width: 25%;
+  height: 250px;
+  border: 0.7px solid var(--bordercolor);
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 5px;
+}
+.price {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pre_total {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.total {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.total hr {
+  height: 0.7px;
+  width: 95%;
+  border: 0;
+  background-color: var(--bordercolor);
+}
+
+input[type="submit"] {
+  height: 40px;
+  background-color: var(--maincolor);
+  font-family: var(--mainfont);
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
